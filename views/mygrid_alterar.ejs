@@ -25,31 +25,31 @@
               
             <br>
 
-            <h3>Excluir Notícia</h3>
+            <h3>Alterar Notícia</h3>
 
             <br>
 
             <form action="/alterar_mygrid?id=<%=dados._id%>" method="post">
                 <label for="titulo">Título:</label>
-                <input class="form-control " type="text" name="titulo" id="titulo" placeholder="<%=dados.titulo%>"><br>
+                <input class="form-control " type="text" name="titulo" id="titulo" value="<%=dados.titulo%>"><br>
                 <label for="texto">Texto:</label>
                 <textarea class="form-control form-control-sm" name="texto" id="texto" cols="30" rows="10" ><%=dados.texto %></textarea><br>
             
-        
+            <!--
                 <a href="/mygrid">
-                    <button class="btn btn-outline-warning">Cancelar</button>
+                    <button class="btn btn-outline-danger">Cancelar</button>
                 </a>
 
                 <a href="/excluir_mygrid?id=<%=dados._id%>">
-                    <button class="btn btn-outline-danger">Alterar</button>
-                </a><br>
+                    <button class="btn btn-outline-success">Excluir</button>
+                </a>
+            -->
+                <br>
                 
-                
-                <!--utilizando o evento onclick-->
                 <button class="btn btn-outline-danger" onclick="window.location.href='/mygrid'">Cancelar</button>
                 <button class="btn btn-outline-success" onclick="window.location.href='/alterar_mygrid?id=<%=dados._id%>'">Alterar</button>
-            </form>    
             
+            </form>
                 
             
            
