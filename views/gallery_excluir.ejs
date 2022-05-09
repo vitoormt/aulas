@@ -14,14 +14,12 @@
     <div class="container">
         <h1>
             <a href="/admin"><i class="fas fa-backspace"></i></a> Imagens - Gallery</h1>
-        <h3>Alterar Imagens</h3>
-        <form action="" method="post" enctype="multipart/form-data">
+        <h3>Excluir Imagens</h3>
+        <form action="" method="post">
             <img src="uploads/<%=dados.arquivo%>" width="300" alt=""><br>
             <input type="hidden" name="anterior" value="<%=dados.arquivo%>">
-            <label for="imagem">Imagem: (só serão aceitos arquivos <i>(png, jpg e jpeg)</i> com no máximo <i>100kb</i>)</label><br>
-            <input type="file" name="imagem" id="imagem"><br>
             <button type="button" class="btn btn-outline-warning" onclick="window.location.href='/gallery'">Cancelar</button>
-            <input type="submit" value="Alterar" class="btn btn-outline-danger">
+            <input type="submit" value="Excluir" class="btn btn-outline-danger">
         </form>
     </div>
 </body>
