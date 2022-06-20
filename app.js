@@ -1,12 +1,14 @@
 const servidor = require('./config/servidor')
-var app = servidor.app
-var porta = servidor.porta
+const app = servidor.app
+const porta = servidor.porta
 
-// rota de exemplo para testar o servidor
-app.get('/', (req, res) => {
-    res.send('Servidor funcionando em http://localhost:' + porta)
-})
+//importar a rota index.js
+const index = require('./routes/index')(app)
 
-app.listen(porta, () => {
-    console.log('http://localhost:' + porta)
+//importar o consgin e configurar
+const consgin = require('consign')
+consgin().include('./routes').into(app)
+
+app.listen(porta,()=>{
+    console.log("http://localhost:"+porta)
 })

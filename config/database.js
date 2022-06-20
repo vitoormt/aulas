@@ -1,10 +1,9 @@
+// importar o mongoose
 const mongoose = require('mongoose')
-
-const conexao = async() => {
-    //conexao local
-    //var bdlocal = await mongoose.connect('mongodb://localhost/ac1tri')
-    //conexao atlas
-    var atlas = await mongoose.connect('mongodb+srv://AC1:Vitor123456@cluster0.mabqy.mongodb.net/ACZINHA')
+//script de conexão
+const conn = async()=>{
+    const atlas = await mongoose.connect('mongodb+srv://Vitor:Vitorr@cluster0.mabqy.mongodb.net/test')
 }
 
-module.exports = conexao
+//exportar as informações para acesso externo
+module.exports = conn

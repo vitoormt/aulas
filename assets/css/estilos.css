@@ -1,0 +1,18 @@
+.botao{
+    margin-top: 10px;
+    width: 125px;
+    margin-bottom: 10px;
+}
+
+.login-email{
+    display: flex;
+    font-weight: bold;
+    margin: 10px 0 2px 0;
+}
+
+.login-senha{
+    display: flex;
+    font-weight: bold;
+    margin: 10px 0 2px 0;
+}
+
