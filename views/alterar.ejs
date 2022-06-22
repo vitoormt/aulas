@@ -20,23 +20,24 @@
                 <form action="/atividades" method="post" class="form-control">
                     <input type="hidden" name="id" value="<%=id%>">
                     <input type="hidden" name="nome" value="<%=nome%>">
+                    <input type="hidden" name="id_a" value="<%=dados._id%>">
                     <div class="form-floating"> 
-                        <input type="date" name="data" id="floatingInput" class="form-control" placeholder="Data" value="<&=dados.data.toISOString().slice(0,10)%>" required>
+                        <input type="date" name="data" id="floatingInput" class="form-control" placeholder="Data" value="<%=dados.data.toISOString().slice(0,10)%>" required>
                         <label for="floatingInput">Data de Entrega:</label>
                     </div>
                     <div class="form-floating">
                         <select name="disciplina" id="" class="form-control">
-                            <option value="0">Selecione...</option>
-                            <option value="Mat">Matemática</option>
-                            <option value="Inw">Internet Web</I></option>
-                            <option value="Port">Português</option>
-                            <option value="LPL">Linguagem de Programação</option>
+                            <option value="0"<%=dados.disciplina=="0"?"selected":""%>>Selecione...</option>
+                            <option value="Mat"<%=dados.disciplina=="Mat"?"selected":""%>>Matemática</option>
+                            <option value="Inw"<%=dados.disciplina=="Inw"?"selected":""%>>Internet Web</I></option>
+                            <option value="Port"<%=dados.disciplina=="Port"?"selected":""%>>Português</option>
+                            <option value="LPL"<%=dados.disciplina=="LPL"?"selected":""%>>Linguagem de Programação</option>
                         </select>
                         <label for="floatingSelectGrid">Disciplina:</label>
                     </div> 
                     <div class="form-floating">
                         <select name="tipo" id="" class="form-control">
-                            <option value="0">Selecione...</option>
+                            <option value="0" <%=dados.tipo=="0"?"selected":""%>>Selecione...</option>
                             <option value="1"<%=dados.tipo=="1"?"selected":""%>>AC</option>
                             <option value="2"<%=dados.tipo=="2"?"selected":""%>>AT</option>
                             <option value="3"<%=dados.tipo=="3"?"selected":""%>>REC</option>
@@ -51,7 +52,9 @@
                     <input type="radio" name="entrega" class="form-check-input" id="" value="formulario"<%=dados.entrega=="formulario"?"checked":""%>>Forms
                     <label for="" class="form-control">Orientações</label>
                     <textarea name="orientacao" id="" cols="30" rows="10" class="form-control"><%=dados.instrucoes%></textarea>
-                    <div><input type="submit" value="Alterar" class="btn btn-danger botao"></div>
+                    <input type="submit" value="Cancelar" class="btn btn-info" onclick="history.back()">
+                    <input type="submit" value="Alterar" class="btn btn-danger">
+                        
                 </form>               
             </div>
         </div>

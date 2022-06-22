@@ -83,5 +83,23 @@ module.exports = (app)=>{
 
     })
 
+    //criar a rota para gravas as alterações na atividade
+    app.post('/alterar', async(req,res)=>{
+        //qual atividade será atualizada?
+        //quais são as informações digitadas
+        var infos = req.body
+        //garavar as informações na collection atividades
+        var garvar = await atividades.findOneAndUpdate(
+            {_id:infos.id_a},
+            {
+                data:infos.data,
+                tipo:infos.tipo,
+                disciplina:infos.disciplina,
+                entrega:tipos.entrega,
+                instrucoes:infos.orientacao
+            }    
+        )
+        res.redirect('/atividades?id='+infos.id)
+    })
 }
 
