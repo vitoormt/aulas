@@ -3,7 +3,7 @@ const express = require('express')
 //executar o express
 const app = express()
 //definir a porta de servidor local
-const porta = 4040
+const porta = process.env.PORT || 4040
 
 //definir a pasta dos arquivos estaticos  (css, imagens, jquerry)
 app.use(express.static('./assets'))
